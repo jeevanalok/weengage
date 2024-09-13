@@ -12,18 +12,18 @@ const Testimoni = ({
     {
       name: "Pradeep Lohiya",
       image: "/assets/people-3.png",
-      city: "Ritumbhara Hotel & Resort",
+      business: "Owner, Ritumbhara Hotel & Resort",
       rating: "5",
       testimoni:
         "WeEngage has transformed our hotel operations. We've seen a ​30% increase in direct bookings and our guest satisfaction ​scores have never been higher!",
     },
     {
-      name: "Pradeep Lohiya",
+      name: "Salim Khan",
       image: "/assets/people-3.png",
-      city: "Ritumbhara Hotel & Resort",
+      business: "Receptionist, The Olive",
       rating: "5",
       testimoni:
-        "WeEngage has transformed our hotel operations. We've seen a ​30% increase in direct bookings and our guest satisfaction ​scores have never been higher!",
+        "WeEngage's PMS software has made our operations at The Olive smoother and more efficient. It's user-friendly, saves time, and integrates seamlessly with our systems. Highly recommend",
     },
   ],
 }) => {
@@ -85,7 +85,7 @@ const Testimoni = ({
                       {listTestimonis.name}
                     </p>
                     <p className="text-sm text-black-500 capitalize">
-                      {listTestimonis.city},{listTestimonis.country}
+                      {listTestimonis.business},{listTestimonis.country}
                     </p>
                   </div>
                 </div>
