@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# WeEngage - AI-Powered Hospitality Platform
 
-## Getting Started
+WeEngage is a next-generation hospitality platform designed to transform guest experiences in independent properties through AI-powered solutions. The platform helps small hotels, B&Bs, and homestays deliver exceptional service while optimizing operations and increasing revenue.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+WeEngage offers a comprehensive suite of tools for modern hospitality:
+
+- **GuestHub**: Digital concierge with AI-powered check-in, communications, and service recommendations
+- **ATLAS**: Complete Property Management System for front office, housekeeping, and maintenance operations
+- **LOOP**: Guest engagement suite with loyalty programs and automated feedback collection
+- **PRISM**: Smart pricing and analytics platform with revenue intelligence
+
+## 📋 Project Structure
+
+```
+app/               # Main application routes and pages
+    (products)/      # Product-specific pages (atlas, guesthub, loop, prism)
+    blogs/           # Blog pages with dynamic content
+components/        # UI Components
+    shared/          # Shared components used across multiple pages
+    ui/              # Base UI components (buttons, cards, inputs, etc.)
+lib/               # Utility functions and helpers
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Technologies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Next.js**: React framework for server-rendered applications
+- **TypeScript**: Type-safe JavaScript
+- **Tailwind CSS**: Utility-first CSS framework
+- **Shadcn UI**: Unstyled, accessible component primitives
+- **Lucide Icons**: Beautiful, consistent icon set
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 Getting Started
 
-## Learn More
+### Prerequisites
 
-To learn more about Next.js, take a look at the following resources:
+- Node.js (v18 or higher)
+- npm or yarn
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Installation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Clone the repository
+     ```bash
+     git clone https://github.com/yourusername/weengage-landing.git
+     cd weengage-landing
+     ```
 
-## Deploy on Vercel
+2. Install dependencies
+     ```bash
+     npm install
+     # or
+     yarn install
+     ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. Start the development server
+     ```bash
+     npm run dev
+     # or
+     yarn dev
+     ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+## 🧪 Building for Production
+
+```bash
+npm run build
+# or
+yarn build
+```
+
+To start the production server:
+```bash
+npm start
+# or
+yarn start
+```
+
+## 📄 License
+
+This project is proprietary and confidential.
+
+## 📧 Contact
+
+- Email: contact@weengage.com
+- Website: [www.weengage.in](https://www.weengage.in)
