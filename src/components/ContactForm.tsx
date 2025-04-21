@@ -46,28 +46,50 @@ const ContactForm = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
+    const { propertyType, rooms } = formData;
+    if (propertyType === "" || rooms === "") {
+      toast.warning("Please select property type and number of rooms.");
       setIsSubmitting(false);
-      toast.info("Demo request received!", {
-        description:
-          "We'll be in touch within 24 hours to schedule your personalized demo.",
+      return;
+    }
+
+    try {
+      const response = await fetch("https://formspree.io/f/mzzrpgnd", {
+        method: "POST",
+        body: JSON.stringify(formData),
+        headers: { "Content-Type": "application/json" },
       });
 
-      // Reset form
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        propertyType: "",
-        rooms: "",
-        message: "",
-      });
-    }, 1500);
+      if (response.ok) {
+        toast.info("Demo request received!", {
+          description:
+            "We'll be in touch within 24 hours to schedule your personalized demo.",
+        });
+
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          propertyType: "",
+          rooms: "",
+          message: "",
+        });
+      } else {
+        toast.error("Something went wrong", {
+          description: "Please try again later.",
+        });
+      }
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (error) {
+      toast.error("Failed to send request");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -146,6 +168,7 @@ const ContactForm = () => {
                     onChange={handleChange}
                     placeholder="Your full name"
                     required
+                    className="focus-visible:ring-2 focus-visible:ring-hotel-500"
                   />
                 </div>
 
@@ -156,9 +179,12 @@ const ContactForm = () => {
                     name="email"
                     type="email"
                     value={formData.email}
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                    title="Please enter a valid email address"
                     onChange={handleChange}
                     placeholder="your@email.com"
                     required
+                    className="focus-visible:ring-2 focus-visible:ring-hotel-500"
                   />
                 </div>
 
@@ -169,7 +195,12 @@ const ContactForm = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
+                    type="tel"
                     placeholder="Your phone number"
+                    required
+                    pattern="[0-9]{10}"
+                    title="Please enter a valid phone number"
+                    className="focus-visible:ring-2 focus-visible:ring-hotel-500"
                   />
                 </div>
 
@@ -181,13 +212,16 @@ const ContactForm = () => {
                       onValueChange={(value) =>
                         handleSelectChange(value, "propertyType")
                       }
+                      required
                     >
                       <SelectTrigger id="propertyType">
                         <SelectValue placeholder="Select type" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="hotel">Small Hotel</SelectItem>
-                        <SelectItem value="bnb">B&B</SelectItem>
+                        <SelectItem value="hotel"> Hotel</SelectItem>
+                        <SelectItem value="bed & breakfast">
+                          Bed & Breakfast
+                        </SelectItem>
                         <SelectItem value="vacation">
                           Vacation Rental
                         </SelectItem>
@@ -204,6 +238,7 @@ const ContactForm = () => {
                       onValueChange={(value) =>
                         handleSelectChange(value, "rooms")
                       }
+                      required
                     >
                       <SelectTrigger id="rooms">
                         <SelectValue placeholder="Select size" />
@@ -227,6 +262,7 @@ const ContactForm = () => {
                     onChange={handleChange}
                     placeholder="Share your current challenges and what you're looking to achieve with AI..."
                     rows={4}
+                    className="focus-visible:ring-2 focus-visible:ring-hotel-500"
                   />
                 </div>
 

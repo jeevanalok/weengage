@@ -26,18 +26,18 @@ const Footer = () => {
             </p>
             <div className="mt-6 space-y-2 text-gray-400">
               <a
-                href="mailto:contact@weengage.com"
+                href="mailto:contact@weengage.in"
                 className="flex items-center gap-2 hover:text-hotel-500 transition-colors"
               >
                 <Mail size={18} />
-                contact@weengage.com
+                contact@weengage.in
               </a>
               <a
-                href="tel:+1234567890"
+                href="tel:+919261141701"
                 className="flex items-center gap-2 hover:text-hotel-500 transition-colors"
               >
                 <Phone size={18} />
-                +91 1234 567 890
+                +91 9261141701
               </a>
               <a
                 href="https://weengage.in"
