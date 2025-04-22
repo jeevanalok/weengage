@@ -80,8 +80,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    // TODO: Uncomment and add your verification codes after google search console verification
-    // google: "google-site-verification-code",
+    google: "_azVqt1tjHVzG_TXWPA7bi-dmBp5FVGP3I7cdNJ1cjw",
     // yandex: "yandex-verification-code",
     // yahoo: "yahoo-verification-code",
     other: {
