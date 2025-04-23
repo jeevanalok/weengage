@@ -144,6 +144,7 @@ const Pricing = () => {
               "Open API keys for integrations",
               "Smart inventory & procurement",
               "Guest preference management",
+              "Virtual Property Manager",
               "Automated maintenance",
             ]}
             ctaText="Start 14-Day Free Trial"
