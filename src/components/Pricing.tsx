@@ -5,6 +5,7 @@ import { Check } from "lucide-react";
 interface PricingTierProps {
   name: string;
   price: string;
+  discountedPrice?: string;
 
   description: string;
   features: string[];
@@ -15,6 +16,7 @@ interface PricingTierProps {
 const PricingTier = ({
   name,
   price,
+  discountedPrice,
   description,
   features,
   isPopular = false,
@@ -36,7 +38,9 @@ const PricingTier = ({
       <div className="p-6 md:p-8">
         <h3 className="text-xl font-semibold text-gray-900">{name}</h3>
         <div className="mt-4 flex items-baseline">
-          <span className="text-4xl font-bold">₹ {price}</span>
+          <span className="text-4xl font-bold">
+            <s className="text-gray-900">₹{price}</s> ₹{discountedPrice}
+          </span>
           <span className="ml-1 text-gray-600">/month</span>
         </div>
         <p className="mt-2 text-gray-600">{description}</p>
@@ -81,60 +85,68 @@ const Pricing = () => {
             Simple, Transparent <span className="text-gradient">Pricing</span>
           </h2>
           <p className="text-lg text-gray-600">
-            Choose the plan that&apos;s right for your property. All plans include
-            our core AI services with no hidden fees or long-term contracts
-            required.
+            Choose the plan that&apos;s right for your property. All plans
+            include our core AI services with no hidden fees or long-term
+            contracts required.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <PricingTier
             name="Basic"
-            price="6000"
-            description="Perfect for small B&Bs and vacation rentals with up to 5 rooms."
+            price="1999"
+            discountedPrice="1499"
+            description="Essential tools for budget stays and small independent hotels."
             features={[
-              "Easy set-up booking engine",
-              "OTAs/Channel manager connection",
-              "Online guest journey",
+              "Airbnb integration",
               "Automated payments",
-              "Reservation management",
-              "Front-office operations",
-              "Inventory management",
+              "Automated check-in & checkout messages (Airbnb compatible)",
+              "Guest data access",
+              "Housekeeping automation",
+              "Smart Admin Dashboard",
+              "Basic support",
             ]}
             ctaText="Start 14-Day Free Trial"
           />
 
           <PricingTier
-            name="Premiun"
-            price="4099"
+            name="Premium"
+            price="3999"
+            discountedPrice="2499"
             description="Ideal for growing properties looking to enhance revenue and guest communication."
-            isPopular={true}
             features={[
               "Everything in Basic",
-              "Digital upselling with service/room upgrades",
-              "Collect real email from OTA guests",
-              "Outlet revenue reporting",
-              "WeEngage Analytics",
+              "WhatsApp integration",
+              "Guest journey mapping",
+              "Guest personalization",
+              "WeEngage analytics",
               "Email support",
-              "24/7 live chat",
+              "24/7 live support",
+              "Digital upselling",
+              "AI Front Desk",
+              "Digital Concierge",
             ]}
             ctaText="Start 14-Day Free Trial"
           />
 
           <PricingTier
-            name="Platinum"
-            price="4999"
-            description="Comprehensive solution for larger properties with 21-50 rooms."
+            name="Platinum Plus"
+            price="5999"
+            discountedPrice="2999"
+            isPopular={true}
+            description="Complete AI-powered guest experience and operational intelligence suite."
             features={[
               "Everything in Premium",
-              "Automate Google Review Management",
-              "Dedicated Consultant",
-              "WebApp For Guest",
-              "QR code for Check-in",
-              "QR Code for Review",
-              "WhatsApp API Integration",
+              "AI-powered guest communication (Email & WhatsApp)",
+              "Loyalty & reward program",
+              "Smart pricing & strategic insights",
+              "Smart upselling",
+              "Open API keys for integrations",
+              "Smart inventory & procurement",
+              "Guest preference management",
+              "Automated maintenance",
             ]}
-            ctaText="Contact Sales"
+            ctaText="Start 14-Day Free Trial"
           />
         </div>
 
