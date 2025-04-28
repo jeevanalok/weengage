@@ -257,7 +257,7 @@ const UseCases = () => {
                   B&B Success Story
                 </h3>
                 <p className="text-gray-700 mb-4">
-                  Buradvilas 1911, a family-run 8-room bed and breakfast, needed
+                  A family-run 5-room bed and breakfast, needed
                   to modernize operations while maintaining their personal
                   touch.
                 </p>

@@ -73,9 +73,7 @@ const Testimonials = () => {
             <div className="text-gray-400 font-display text-xl font-bold">
               Ritumbhara Hotel and Resort
             </div>
-            <div className="text-gray-400 font-display text-xl font-bold">
-              Buradvilas 1911
-            </div>
+           
             <div className="text-gray-400 font-display text-xl font-bold">
               The Olive
             </div>
